@@ -121,6 +121,8 @@ function writePassword() {
       console.log("Your password is: " + password);
       return password;
     }
+  
+  //
 
 
 }
