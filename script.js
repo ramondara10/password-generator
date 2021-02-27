@@ -13,8 +13,9 @@ var numberChoices = "1234567890";
 var uppercaseChoices = "ABDCEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercaseChoices = "abcdefghijklmnopqrstuvwxyz";
 var password = " ";
+//var newPassword = true;
 
-
+//while (newPassword) {
 // Write password to the #password input
 function writePassword() {
   var userinputLength = prompt("Please select a number between 8 and 128");
@@ -70,7 +71,7 @@ function writePassword() {
   }
 
   // user selection 3 out of 4 options
-    // no numbers
+  // no numbers
   if (userinputSpecialT && userinputUppercaseT && userinputLowercaseT && userinputNumbersF) {
     var userSel = specialChoices + uppercaseChoices + lowercaseChoices;
 
@@ -83,50 +84,181 @@ function writePassword() {
     return password;
   }
 
-    // no lowercase
-    if (userinputSpecialT && userinputUppercaseT && userinputLowercaseF && userinputNumbersT) {
-      var userSel = specialChoices + uppercaseChoices + numberChoices;
-  
-      for (var i = 0; i < userinputLength; i++) {
-        password += userSel[Math.floor(Math.random() * userSel.length)];
-      }
-  
-      passwordText.value = password;
-      console.log("Your password is: " + password);
-      return password;
+  // no lowercase
+  if (userinputSpecialT && userinputUppercaseT && userinputLowercaseF && userinputNumbersT) {
+    var userSel = specialChoices + uppercaseChoices + numberChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
     }
 
-    // no uppercase
-    if (userinputSpecialT && userinputUppercaseF && userinputLowercaseT && userinputNumbersT) {
-      var userSel = specialChoices + lowercaseChoices + numberChoices;
-  
-      for (var i = 0; i < userinputLength; i++) {
-        password += userSel[Math.floor(Math.random() * userSel.length)];
-      }
-  
-      passwordText.value = password;
-      console.log("Your password is: " + password);
-      return password;
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  // no uppercase
+  if (userinputSpecialT && userinputUppercaseF && userinputLowercaseT && userinputNumbersT) {
+    var userSel = specialChoices + lowercaseChoices + numberChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
     }
 
-    // no special
-    if (userinputSpecialF && userinputUppercaseT && userinputLowercaseT && userinputNumbersT) {
-      var userSel = uppercaseChoices + lowercaseChoices + numberChoices;
-  
-      for (var i = 0; i < userinputLength; i++) {
-        password += userSel[Math.floor(Math.random() * userSel.length)];
-      }
-  
-      passwordText.value = password;
-      console.log("Your password is: " + password);
-      return password;
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  // no special
+  if (userinputSpecialF && userinputUppercaseT && userinputLowercaseT && userinputNumbersT) {
+    var userSel = uppercaseChoices + lowercaseChoices + numberChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
     }
-  
-  //
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  // user selection 2 out of 4
+
+  //no number and lowercase
+  if (userinputSpecialT && userinputUppercaseT && userinputLowercaseF && userinputNumbersF) {
+    var userSel = specialChoices + uppercaseChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //no special and uppercase
+  if (userinputSpecialF && userinputUppercaseF && userinputLowercaseT && userinputNumbersF) {
+    var userSel = lowercaseChoices + numberChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //no uppercase and lowercase
+  if (userinputSpecialT && userinputUppercaseF && userinputLowercaseF && userinputNumbersT) {
+    var userSel = specialChoices + numberChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //no special and numbers
+  if (userinputSpecialF && userinputUppercaseT && userinputLowercaseT && userinputNumbersF) {
+    var userSel = uppercaseChoices + lowercaseChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //no upper and number
+  if (userinputSpecialT && userinputUppercaseF && userinputLowercaseT && userinputNumbersF) {
+    var userSel = specialChoices + lowercaseChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //no special and lower
+  if (userinputSpecialF && userinputUppercaseT && userinputLowercaseF && userinputNumbersT) {
+    var userSel = uppercaseChoices + numberChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  // user selection 1 out of 4
+  //only special
+  if (userinputSpecialT && userinputUppercaseF && userinputLowercaseF && userinputNumbersF) {
+    var userSel = specialChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+  // only uppercase
+  if (userinputSpecialF && userinputUppercaseT && userinputLowercaseF && userinputNumbersF) {
+    var userSel = uppercaseChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //only lowercse
+  if (userinputSpecialF && userinputUppercaseF && userinputLowercaseT && userinputNumbersF) {
+    var userSel = lowercaseChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //only numbers
+  if (userinputSpecialF && userinputUppercaseF && userinputLowercaseF && userinputNumbersT) {
+    var userSel = numberChoices;
+
+    for (var i = 0; i < userinputLength; i++) {
+      password += userSel[Math.floor(Math.random() * userSel.length)];
+    }
+
+    passwordText.value = password;
+    console.log("Your password is: " + password);
+    return password;
+  }
+
+  //newPassword = confirm("Would you like to have a new password?")
 
 
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
